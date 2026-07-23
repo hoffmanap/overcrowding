@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shortage or Culture? · El Paso Overcrowding, Myth-Checked</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14161a;
+    --paper:#fdfbf6;
+    --paper-2:#f4efe2;
+    --yellow:#ffd23f;
+    --pink:#ff6f9c;
+    --teal:#26c6b0;
+    --green:#159a5c;
+    --red:#e8432f;
+    --line: rgba(20,22,26,0.14);
+    --maxw: 920px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  ::selection{ background:var(--yellow); }
+
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.72rem;
+    font-weight:600;
+    color:var(--ink);
+    opacity:.6;
+  }
+
+  /* ---------- highlighter marks ---------- */
+  .hl{
+    box-decoration-break:clone;
+    -webkit-box-decoration-break:clone;
+    padding:.02em .28em;
+    border-radius:.15em 0.6em .2em 0.5em / .5em .2em .6em .15em;
+  }
+  .hl-y{ background:linear-gradient(104deg, rgba(255,210,63,0) 0%, rgba(255,210,63,.75) 6%, rgba(255,210,63,.75) 94%, rgba(255,210,63,0) 100%); }
+  .hl-p{ background:linear-gradient(104deg, rgba(255,111,156,0) 0%, rgba(255,111,156,.55) 6%, rgba(255,111,156,.55) 94%, rgba(255,111,156,0) 100%); }
+  .hl-t{ background:linear-gradient(104deg, rgba(38,198,176,0) 0%, rgba(38,198,176,.55) 6%, rgba(38,198,176,.55) 94%, rgba(38,198,176,0) 100%); }
+
+  /* ---------- hero ---------- */
+  header.hero{ padding:96px 0 64px; border-bottom:1px solid var(--line); }
+  .hero h1{
+    font-family:'Fraunces', serif;
+    font-weight:900;
+    font-size:clamp(2.6rem, 6.4vw, 4.6rem);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    margin:.5em 0 .3em;
+  }
+  .hero p.dek{
+    font-size:1.2rem;
+    max-width:640px;
+    color:#3a3d44;
+  }
+  .hero .meta{
+    margin-top:28px;
+    display:flex; gap:22px; flex-wrap:wrap;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.78rem;
+    color:#65686f;
+  }
+
+  /* ---------- assumption sections ---------- */
+  section.claim{ padding:76px 0; border-bottom:1px solid var(--line); position:relative; }
+  section.claim.tint{ background:var(--paper-2); }
+  .claim-head{ position:relative; padding-right:150px; }
+  .claim h2{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(1.5rem, 3.4vw, 2.35rem);
+    line-height:1.18;
+    margin:.35em 0 0;
+  }
+
+  /* the stamp — sits on top of the headline */
+  .stamp{
+    position:absolute;
+    top:-14px; right:0;
+    display:inline-flex;
+    align-items:center;
+    gap:.35em;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:1rem;
+    letter-spacing:.12em;
+    padding:.5em .85em;
+    border-radius:10px;
+    border:3px solid currentColor;
+    background:var(--paper);
+    transform:rotate(-7deg);
+    box-shadow:3px 4px 0 rgba(20,22,26,0.12);
+    white-space:nowrap;
+  }
+  .stamp::before{ content:'●'; font-size:.55em; }
+  .stamp.is-true{ color:var(--green); }
+  .stamp.is-false{ color:var(--red); }
+
+  .claim .lede{
+    margin-top:22px;
+    font-size:1.08rem;
+    max-width:680px;
+  }
+
+  .statrow{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(170px,1fr));
+    gap:18px;
+    margin-top:34px;
+  }
+  .stat{
+    border:1px solid var(--line);
+    background:var(--paper);
+    border-radius:14px;
+    padding:18px 18px 16px;
+  }
+  section.claim.tint .stat{ background:#fffdf7; }
+  .stat .big{
+    font-family:'Fraunces', serif;
+    font-weight:900;
+    font-size:2.1rem;
+    line-height:1;
+  }
+  .stat .lbl{
+    margin-top:6px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:#65686f;
+  }
+
+  /* simple bar comparisons */
+  .bars{ margin-top:30px; display:flex; flex-direction:column; gap:14px; max-width:640px; }
+  .bar-row .bar-lbl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.78rem;
+    margin-bottom:5px;
+    display:flex; justify-content:space-between;
+  }
+  .bar-track{ background:var(--line); border-radius:6px; height:16px; overflow:hidden; }
+  .bar-fill{ height:100%; border-radius:6px 0 0 6px; }
+
+  /* ---------- synthesis / bottom line ---------- */
+  section.bottom{
+    background:var(--ink);
+    color:var(--paper);
+    padding:88px 0 96px;
+  }
+  section.bottom .eyebrow{ color:var(--paper); opacity:.55; }
+  section.bottom h2{
+    font-family:'Fraunces', serif;
+    font-weight:900;
+    font-style:normal;
+    font-size:clamp(1.9rem,4.2vw,3rem);
+    line-height:1.12;
+    margin:.4em 0 .5em;
+  }
+  section.bottom .hl-y, section.bottom .hl-p, section.bottom .hl-t{ color:#14161a; }
+  section.bottom p{ max-width:700px; font-size:1.08rem; color:#d9dadd; }
+  section.bottom ul{ margin-top:28px; padding-left:0; list-style:none; max-width:700px; }
+  section.bottom li{
+    padding:14px 0; border-top:1px solid rgba(255,255,255,.14);
+    display:flex; gap:14px; align-items:baseline;
+  }
+  section.bottom li:last-child{ border-bottom:1px solid rgba(255,255,255,.14); }
+  section.bottom li .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    padding:.25em .5em; border-radius:6px; flex:none;
+  }
+  .tag.t{ background:var(--green); color:#08210f; }
+  .tag.f{ background:var(--red); color:#2a0704; }
+
+  /* ---------- footer / methods ---------- */
+  footer{ padding:52px 0 90px; }
+  footer h3{ font-family:'IBM Plex Mono', monospace; font-size:.85rem; text-transform:uppercase; letter-spacing:.1em; }
+  footer p, footer li{ color:#4b4e55; font-size:.92rem; }
+  footer .cols{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:36px; margin-top:18px; }
+  footer code{ font-family:'IBM Plex Mono', monospace; background:var(--paper-2); padding:.1em .35em; border-radius:4px; font-size:.85em; }
+
+  @media (max-width:640px){
+    .claim-head{ padding-right:0; }
+    .stamp{ position:static; display:inline-flex; margin-top:14px; transform:rotate(-4deg); }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal.in{ opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">El Paso Housing Needs Assessment · Data Story</div>
+    <h1>Is overcrowding a housing <span class="hl hl-y">shortage</span>,<br>or a <span class="hl hl-p">cultural</span> pattern?</h1>
+    <p class="dek">A faction reviewing the needs assessment argues overcrowded homes just reflect multigenerational households living the way they choose to. We ran the numbers on 12,932 El Paso–area households to check. Four common assumptions, myth-checked below.</p>
+    <div class="meta">
+      <span>SOURCE: ACS 5-YR PUMS · 2019–2023</span>
+      <span>UNIT: OCCUPIED HOUSEHOLDS, WEIGHTED</span>
+      <span>GEOGRAPHY: EL PASO CITY PUMAS</span>
+    </div>
+  </div>
+</header>
+
+<section class="claim reveal">
+  <div class="wrap">
+    <div class="claim-head">
+      <div class="eyebrow">Assumption 01</div>
+      <h2>“Overcrowding is being driven by multigenerational households.”</h2>
+      <div class="stamp is-false">FALSE</div>
+    </div>
+    <p class="lede">Once you control for what a household actually has to work with — its size, its income, whether it rents — multigenerational structure adds <span class="hl hl-y">almost nothing</span> to the odds of overcrowding.</p>
+    <div class="statrow">
+      <div class="stat"><div class="big">74.1%</div><div class="lbl">of overcrowded households are NOT multigenerational</div></div>
+      <div class="stat"><div class="big">1.04×</div><div class="lbl">odds ratio for multigen status, not statistically significant</div></div>
+      <div class="stat"><div class="big">20.5% <span style="font-size:1rem;opacity:.6">vs</span> 4.6%</div><div class="lbl">overcrowding rate inside vs. outside multigen households</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="claim tint reveal">
+  <div class="wrap">
+    <div class="claim-head">
+      <div class="eyebrow">Assumption 02</div>
+      <h2>“Multigenerational living is a low-income cultural coping strategy.”</h2>
+      <div class="stamp is-false">FALSE</div>
+    </div>
+    <p class="lede">If this were true, multigenerational households should skew poorer. They don't — multigenerational share is <span class="hl hl-p">higher above</span> the 70% AMI line than below it, and these households mostly live in ordinary single-family homes, not cramped units.</p>
+    <div class="bars">
+      <div class="bar-row">
+        <div class="bar-lbl"><span>Households above 70% AMI</span><span>8.1% multigenerational</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:8.1%; background:var(--teal);"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-lbl"><span>Households below 70% AMI</span><span>5.9% multigenerational</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:5.9%; background:var(--pink);"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-lbl"><span>Multigen households in single-family detached homes (above AMI)</span><span>87.6%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:87.6%; background:var(--teal);"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="claim reveal">
+  <div class="wrap">
+    <div class="claim-head">
+      <div class="eyebrow">Assumption 03</div>
+      <h2>“Overcrowding is concentrated among renters and lower-income households.”</h2>
+      <div class="stamp is-true">TRUE</div>
+    </div>
+    <p class="lede">This is where the real signal lives. Renting <span class="hl hl-t">more than triples</span> a household's odds of overcrowding; falling below 70% AMI roughly <span class="hl hl-y">doubles</span> them — both far larger, more consistent effects than household type.</p>
+    <div class="statrow">
+      <div class="stat"><div class="big">3.11×</div><div class="lbl">odds ratio, renter vs. owner (p&lt;0.001)</div></div>
+      <div class="stat"><div class="big">2.03×</div><div class="lbl">odds ratio, below vs. above 70% AMI (p&lt;0.001)</div></div>
+      <div class="stat"><div class="big">4.4% <span style="font-size:1rem;opacity:.6">→</span> 7.6%</div><div class="lbl">overcrowded share, above-AMI vs. below-AMI tracts</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="claim tint reveal">
+  <div class="wrap">
+    <div class="claim-head">
+      <div class="eyebrow">Assumption 04</div>
+      <h2>“Tighter housing markets push more households to double up.”</h2>
+      <div class="stamp is-true">TRUE</div>
+    </div>
+    <p class="lede">Doubling-up rates track vacancy, not the other way around. The PUMA with the <span class="hl hl-t">tightest</span> vacancy (Horizon City, 0.004%) has the highest doubling-up rate; the PUMA with the most breathing room (Central, 2.6%) has the lowest. Meanwhile the city has been permitting fewer homes every year since 2015.</p>
+    <div class="statrow">
+      <div class="stat"><div class="big">−0.51</div><div class="lbl">correlation, doubled-up rate vs. residential vacancy (6 PUMAs)</div></div>
+      <div class="stat"><div class="big">3,941 <span style="font-size:1rem;opacity:.6">→</span> 1,852</div><div class="lbl">units permitted per year, City of El Paso, 2015 → 2023</div></div>
+      <div class="stat"><div class="big">−53%</div><div class="lbl">decline in annual home production over that span</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="bottom reveal">
+  <div class="wrap">
+    <div class="eyebrow">Bottom line</div>
+    <h2>It's not who's living together.<br>It's whether there's <span class="hl hl-y">enough to live in</span>.</h2>
+    <p>Overcrowding in El Paso tracks renter status, income, and household size — not household type. Multigenerational living happens across the income spectrum, mostly in adequately sized homes. Crowding shows up when low income and renting collide with a shrinking supply of appropriately sized, affordable units.</p>
+    <ul>
+      <li><span class="tag f">FALSE</span> Overcrowding is a multigenerational-household problem</li>
+      <li><span class="tag f">FALSE</span> Multigenerational living is a poverty-driven cultural pattern</li>
+      <li><span class="tag t">TRUE</span> Overcrowding concentrates among renters and low-income households</li>
+      <li><span class="tag t">TRUE</span> Tighter markets and falling production track higher doubling-up</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h3>Methods &amp; caveats</h3>
+    <div class="cols">
+      <div>
+        <p><strong>Overcrowded</strong> = more than 1 person per room (persons ÷ rooms &gt; 1.0), the standard Census/HUD threshold. <strong>Multigenerational</strong> follows Census's own <code>MULTG</code> definition (3+ generations in one household).</p>
+      </div>
+      <div>
+        <p>Household-level odds ratios come from a weighted logistic regression (n=12,932 households, WGTP weights); an unweighted robustness check produced the same direction and significance pattern. Not adjusted for full replicate-weight design effects, so treat exact p-values as approximate.</p>
+      </div>
+      <div>
+        <p>The vacancy/doubling-up correlation is drawn from only 6 PUMAs — directionally consistent with the rest of the evidence, but too small a sample to stand alone.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
