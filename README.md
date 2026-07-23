@@ -13,7 +13,7 @@ Overcrowding tracks **renter status, income, and household size** — not househ
 | Overcrowding is driven by multigenerational households | **FALSE** |
 | Multigenerational living is a low-income cultural coping strategy | **FALSE** |
 | Overcrowding concentrates among renters and low-income households | **TRUE** |
-| Tighter housing markets are linked to more household doubling-up | **TRUE** |
+| Tight, unaffordable housing markets track higher overcrowding (not just doubling-up) | **TRUE** |
 
 ## Data sources
 
@@ -24,6 +24,7 @@ Overcrowding tracks **renter status, income, and household size** — not househ
 - **2020 Decennial Census**, tract-level housing unit counts (production/stock-growth proxy)
 - Derived "doubling-up" summaries (by PUMA, by poverty band, by income tercile × tenure, with residential vacancy) built from the PUMS extract above
 - **13-metro comparison**: doubling-up rate, multigenerational share, and median household income (ACS PUMS) matched against Zillow ZORI (rent) and ZHVI (home value) indices, June 2026
+- **13-metro overcrowding/vacancy panel**: household-level PUMS pull (Houston excluded — data collection timed out) computing actual overcrowded rate, vacancy rate, and doubled-up rate from the same sample for each metro, split by income-to-poverty ratio (`POVPIP`)
 
 ## Files in this folder
 
@@ -44,7 +45,9 @@ Overcrowding tracks **renter status, income, and household size** — not househ
   - Renter: **3.11×**, p<0.001
 - PUMA-level correlation, doubled-up household rate vs. residential vacancy rate: **r = −0.51** (n=6 PUMAs — directional, not conclusive on its own)
 - City of El Paso building permits: **3,941 units (2015) → 1,852 units (2023)**, a 53% decline
-- Across 13 comparison metros, doubled-up household rate correlates with median income (**r = −0.51**) and rent-to-income ratio (**r = 0.41**) — but barely at all with home price-to-income ratio (**r = 0.06**). El Paso (32.6% doubled-up) sits in the middle of this group, not as an outlier — the pattern isn't unique to this market
+- Across 13 comparison metros (Houston excluded — data collection timed out), overcrowded rate correlates strongly with doubled-up rate (**r = 0.84**) but only weakly and non-significantly with raw metro-level vacancy rate (**r = 0.25**) — the metro-level relationship runs through affordability, not raw vacant-unit counts
+- In **13 of 13** metros tested, the highest income band (400%+ of the poverty line) has the lowest overcrowding rate, with no exceptions — e.g., El Paso 10.3% → 1.9%, Fresno 17.8% → 3.3%, Los Angeles 16.4% → 4.3%. In a few high-cost coastal metros (LA, San Francisco, Honolulu), households just above the poverty line are sometimes *more* crowded than those below it — plausibly because deep poverty carries better access to subsidized housing than the near-poor get
+- El Paso itself lands in the middle of this 13-metro group on both overcrowding (5.7%) and vacancy (7.6%) — not an outlier in either direction
 
 ## Caveats worth keeping in view
 
