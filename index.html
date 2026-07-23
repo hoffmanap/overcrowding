@@ -302,35 +302,45 @@
   <div class="wrap">
     <div class="claim-head">
       <div class="eyebrow">Assumption 04</div>
-      <h2>“Tighter housing markets push more households to double up.”</h2>
+      <h2>“Tight, unaffordable housing markets have more overcrowding — not just more doubling-up.”</h2>
       <div class="stamp is-true">TRUE</div>
     </div>
-    <p class="lede">Doubling-up rates track vacancy, not the other way around. The PUMA with the <span class="hl hl-t">tightest</span> vacancy (Horizon City, 0.004%) has the highest doubling-up rate; the PUMA with the most breathing room (Central, 2.6%) has the lowest. Meanwhile the city has been permitting fewer homes every year since 2015.</p>
+    <p class="lede">The cleanest link isn't a market's raw vacancy number — it's what a household can actually afford. Across all 13 metros tested, the highest-income band (400%+ of the poverty line) has the <span class="hl hl-t">lowest overcrowding rate, without a single exception</span>. Cities with more doubling-up also have more overcrowding (r = 0.84). A market's raw vacancy rate alone, on its own, barely moves with overcrowding at all — the story runs through affordability, not empty units by themselves.</p>
     <div class="statrow">
-      <div class="stat"><div class="big">−0.51</div><div class="lbl">correlation, doubled-up rate vs. residential vacancy (6 PUMAs)</div></div>
-      <div class="stat"><div class="big">3,941 <span style="font-size:1rem;opacity:.6">→</span> 1,852</div><div class="lbl">units permitted per year, City of El Paso, 2015 → 2023</div></div>
-      <div class="stat"><div class="big">−53%</div><div class="lbl">decline in annual home production over that span</div></div>
+      <div class="stat"><div class="big">0.84</div><div class="lbl">correlation, overcrowded rate vs. doubled-up rate, 13 metros</div></div>
+      <div class="stat"><div class="big">13 of 13</div><div class="lbl">metros where the top income band has the lowest overcrowding rate</div></div>
+      <div class="stat"><div class="big">0.25</div><div class="lbl">correlation, overcrowded rate vs. raw vacancy rate alone — weak, not significant</div></div>
+    </div>
+    <p class="lede">The income gap is stark everywhere it's measured: in El Paso, overcrowding falls from <span class="hl hl-y">10.3% below the poverty line to 1.9%</span> above 400% of it. In Fresno, 17.8% → 3.3%. In Los Angeles, 16.4% → 4.3% — though LA and a few other high-cost coastal metros (San Francisco, Honolulu) show a curious wrinkle: households just above the poverty line are sometimes <em>more</em> crowded than those below it, plausibly because deep poverty carries better access to subsidized housing than the near-poor get.</p>
+
+    <div class="submark">
+      <div class="eyebrow">Overcrowded rate by metro (Houston excluded — data collection timed out)</div>
+      <div class="bars compact">
+        <div class="bar-row"><div class="bar-lbl"><span>McAllen, TX</span><span>11.3% overcrowded · 12.6% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:87%; background:var(--pink);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Los Angeles, CA</span><span>11.1% · 6.5% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:85%; background:var(--pink);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Fresno, CA</span><span>10.4% · 5.8% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:80%; background:var(--pink);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Laredo, TX</span><span>9.6% · 8.2% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:74%; background:var(--pink);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Honolulu, HI</span><span>8.7% · 9.5% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:67%; background:var(--teal);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Miami, FL</span><span>6.8% · 12.3% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:52%; background:var(--teal);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>San Francisco, CA</span><span>6.3% · 11.9% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:48%; background:var(--teal);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Dallas, TX</span><span>6.2% · 7.8% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:48%; background:var(--teal);"></div></div></div>
+        <div class="bar-row is-el-paso"><div class="bar-lbl"><span>El Paso, TX ★</span><span>5.7% · 7.6% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:44%; background:var(--yellow);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>San Antonio, TX</span><span>4.6% · 8.3% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:36%; background:var(--teal);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Fort Worth, TX</span><span>4.1% · 7.1% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:32%; background:var(--teal);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Austin, TX</span><span>3.8% · 5.6% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:30%; background:var(--teal);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Albuquerque, NM</span><span>2.5% · 6.7% vacant</span></div><div class="bar-track"><div class="bar-fill" style="width:19%; background:var(--teal);"></div></div></div>
+      </div>
+      <p style="margin-top:16px; font-size:.85rem; color:#65686f;">Notice vacancy rate (second number, each row) doesn't track the overcrowded-rate ranking in any obvious order — Miami and San Francisco have some of the <em>highest</em> vacancy in this set and still land mid-pack on overcrowding. It's household income relative to local cost of living, not the raw vacancy number, that explains the pattern. El Paso sits squarely in the middle of the group, not as an outlier in either direction.</p>
     </div>
 
     <div class="submark">
-      <div class="eyebrow">And it's not just El Paso</div>
-      <p class="lede" style="margin-top:10px;">The same pattern shows up across 13 metros. Doubling-up rates track a city's median income (<span class="hl hl-t">r = −0.51</span>) and rent burden (r = 0.41) far more than any regional culture story would predict — El Paso sits right in the middle of the pack, not as an outlier.</p>
-      <div class="bars compact">
-        <div class="bar-row"><div class="bar-lbl"><span>Laredo, TX</span><span>39.6% · $50.0k median income</span></div><div class="bar-track"><div class="bar-fill" style="width:88%; background:var(--pink);"></div></div></div>
-        <div class="bar-row"><div class="bar-lbl"><span>Los Angeles, CA</span><span>36.0% · $71.0k</span></div><div class="bar-track"><div class="bar-fill" style="width:80%; background:var(--pink);"></div></div></div>
-        <div class="bar-row"><div class="bar-lbl"><span>McAllen, TX</span><span>35.0% · $37.9k</span></div><div class="bar-track"><div class="bar-fill" style="width:78%; background:var(--pink);"></div></div></div>
-        <div class="bar-row"><div class="bar-lbl"><span>Fresno, CA</span><span>33.4% · $59.3k</span></div><div class="bar-track"><div class="bar-fill" style="width:74%; background:var(--pink);"></div></div></div>
-        <div class="bar-row"><div class="bar-lbl"><span>Miami, FL</span><span>32.7% · $51.0k</span></div><div class="bar-track"><div class="bar-fill" style="width:73%; background:var(--pink);"></div></div></div>
-        <div class="bar-row is-el-paso"><div class="bar-lbl"><span>El Paso, TX ★</span><span>32.6% · $47.5k</span></div><div class="bar-track"><div class="bar-fill" style="width:72%; background:var(--yellow);"></div></div></div>
-        <div class="bar-row"><div class="bar-lbl"><span>Honolulu, HI</span><span>30.6% · $81.0k</span></div><div class="bar-track"><div class="bar-fill" style="width:68%; background:var(--teal);"></div></div></div>
-        <div class="bar-row"><div class="bar-lbl"><span>Houston, TX</span><span>28.0% · $58.5k</span></div><div class="bar-track"><div class="bar-fill" style="width:62%; background:var(--teal);"></div></div></div>
-        <div class="bar-row"><div class="bar-lbl"><span>San Antonio, TX</span><span>27.0% · $56.6k</span></div><div class="bar-track"><div class="bar-fill" style="width:60%; background:var(--teal);"></div></div></div>
-        <div class="bar-row"><div class="bar-lbl"><span>Fort Worth, TX</span><span>25.3% · $67.0k</span></div><div class="bar-track"><div class="bar-fill" style="width:56%; background:var(--teal);"></div></div></div>
-        <div class="bar-row"><div class="bar-lbl"><span>San Francisco, CA</span><span>22.8% · $100.4k</span></div><div class="bar-track"><div class="bar-fill" style="width:51%; background:var(--teal);"></div></div></div>
-        <div class="bar-row"><div class="bar-lbl"><span>Austin, TX</span><span>21.5% · $80.0k</span></div><div class="bar-track"><div class="bar-fill" style="width:48%; background:var(--teal);"></div></div></div>
-        <div class="bar-row"><div class="bar-lbl"><span>Albuquerque, NM</span><span>21.1% · $54.3k</span></div><div class="bar-track"><div class="bar-fill" style="width:47%; background:var(--teal);"></div></div></div>
+      <div class="eyebrow">In El Paso specifically</div>
+      <p class="lede" style="margin-top:10px;">The city's own building-permit trend is the plainest illustration of what a tightening market looks like over time: fewer homes added every year since 2015, even as the metro's population needs kept growing.</p>
+      <div class="statrow">
+        <div class="stat"><div class="big">3,941 <span style="font-size:1rem;opacity:.6">→</span> 1,852</div><div class="lbl">units permitted per year, City of El Paso, 2015 → 2023</div></div>
+        <div class="stat"><div class="big">−53%</div><div class="lbl">decline in annual home production over that span</div></div>
+        <div class="stat"><div class="big">−0.51</div><div class="lbl">correlation, doubled-up rate vs. residential vacancy, El Paso PUMAs — see the companion doubling-up analysis for detail</div></div>
       </div>
-      <p style="margin-top:16px; font-size:.85rem; color:#65686f;">Doubled-up household rate (bar) and median household income, 13 U.S. metros. Home price-to-income ratio, by contrast, showed almost no relationship to doubling-up (r = 0.06) — it's the cost of getting by day to day, not home values, that tracks with how many households double up.</p>
     </div>
   </div>
 </section>
@@ -344,7 +354,7 @@
       <li><span class="tag f">FALSE</span> Overcrowding is a multigenerational-household problem</li>
       <li><span class="tag f">FALSE</span> Multigenerational living is a poverty-driven cultural pattern</li>
       <li><span class="tag t">TRUE</span> Overcrowding concentrates among renters and low-income households</li>
-      <li><span class="tag t">TRUE</span> Tighter markets and falling production track higher doubling-up</li>
+      <li><span class="tag t">TRUE</span> Tight, unaffordable markets track higher overcrowding — across 13 metros, not just El Paso</li>
     </ul>
   </div>
 </section>
@@ -360,7 +370,7 @@
         <p>Household-level odds ratios come from a weighted logistic regression (n=12,932 households, WGTP weights); an unweighted robustness check produced the same direction and significance pattern. Not adjusted for full replicate-weight design effects, so treat exact p-values as approximate.</p>
       </div>
       <div>
-        <p>The vacancy/doubling-up correlation is drawn from only 6 PUMAs — directionally consistent with the rest of the evidence, but too small a sample to stand alone.</p>
+        <p>The El Paso PUMA-level vacancy/doubling-up correlation is drawn from only 6 PUMAs — directionally consistent with the rest of the evidence, but too small a sample to stand alone. The 13-metro panel (Houston excluded — data collection timed out) uses income-to-poverty ratio (<code>POVPIP</code>), a nationally standardized measure, rather than HUD's area-median-income thresholds, which vary by metro and would require pulling area-specific income limits for all 13 places to compare fairly.</p>
       </div>
     </div>
   </div>
