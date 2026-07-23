@@ -23,6 +23,7 @@ Overcrowding tracks **renter status, income, and household size** — not househ
 - **Census Building Permits Survey**, City of El Paso, South Region place-level annual files, 2014–2023
 - **2020 Decennial Census**, tract-level housing unit counts (production/stock-growth proxy)
 - Derived "doubling-up" summaries (by PUMA, by poverty band, by income tercile × tenure, with residential vacancy) built from the PUMS extract above
+- **13-metro comparison**: doubling-up rate, multigenerational share, and median household income (ACS PUMS) matched against Zillow ZORI (rent) and ZHVI (home value) indices, June 2026
 
 ## Files in this folder
 
@@ -35,12 +36,15 @@ Overcrowding tracks **renter status, income, and household size** — not househ
 
 - 74.1% of overcrowded households are **not** multigenerational (PUMS crosstab, n=12,932 households, weighted)
 - Multigenerational share: **8.1%** above 70% AMI vs. **5.9%** below it — the opposite of what a poverty-driven-culture story predicts
+- Why: multigenerational households average **1.94 workers** per household vs. **1.19** for everyone else — more earners under one roof, which is also why only 34.3% of them fall below 70% AMI vs. 42.2% of non-multigenerational households
+- 80.5% of multigenerational households live in single-family homes (not a symptom of being squeezed into small units)
 - Weighted logistic regression odds ratios (overcrowded ~ multigen + below-70%-AMI + renter + workers + household size):
   - Multigenerational: **1.04×**, not significant (p=0.08; unweighted check p=0.20)
   - Below 70% AMI: **2.03×**, p<0.001
   - Renter: **3.11×**, p<0.001
 - PUMA-level correlation, doubled-up household rate vs. residential vacancy rate: **r = −0.51** (n=6 PUMAs — directional, not conclusive on its own)
 - City of El Paso building permits: **3,941 units (2015) → 1,852 units (2023)**, a 53% decline
+- Across 13 comparison metros, doubled-up household rate correlates with median income (**r = −0.51**) and rent-to-income ratio (**r = 0.41**) — but barely at all with home price-to-income ratio (**r = 0.06**). El Paso (32.6% doubled-up) sits in the middle of this group, not as an outlier — the pattern isn't unique to this market
 
 ## Caveats worth keeping in view
 
