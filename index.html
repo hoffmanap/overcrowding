@@ -159,6 +159,17 @@
   .bar-track{ background:var(--line); border-radius:6px; height:16px; overflow:hidden; }
   .bar-fill{ height:100%; border-radius:6px 0 0 6px; }
 
+  .submark{
+    margin-top:52px;
+    padding-top:36px;
+    border-top:1px dashed var(--line);
+  }
+  .bars.compact{ gap:9px; margin-top:22px; }
+  .bars.compact .bar-track{ height:11px; }
+  .bars.compact .bar-lbl{ font-size:.74rem; margin-bottom:3px; }
+  .bar-row.is-el-paso .bar-lbl{ font-weight:700; }
+  .bar-row.is-el-paso .bar-track{ box-shadow:0 0 0 2px var(--ink); }
+
   /* ---------- synthesis / bottom line ---------- */
   section.bottom{
     background:var(--ink);
@@ -213,7 +224,7 @@
   <div class="wrap">
     <div class="eyebrow">El Paso Housing Needs Assessment · Data Story</div>
     <h1>Is overcrowding a housing <span class="hl hl-y">shortage</span>,<br>or a <span class="hl hl-p">cultural</span> pattern?</h1>
-    <p class="dek">A faction reviewing the needs assessment argues overcrowded homes just reflect multigenerational households living the way they choose to. We ran the numbers on 12,932 El Paso–area households to check. Four common assumptions, myth-checked below.</p>
+    <p class="dek">One view on the needs assessment holds that overcrowded homes just reflect multigenerational households living the way they choose to. We ran the numbers on 12,932 El Paso–area households to check. Four common assumptions, myth-checked below.</p>
     <div class="meta">
       <span>SOURCE: ACS 5-YR PUMS · 2019–2023</span>
       <span>UNIT: OCCUPIED HOUSEHOLDS, WEIGHTED</span>
@@ -245,7 +256,7 @@
       <h2>“Multigenerational living is a low-income cultural coping strategy.”</h2>
       <div class="stamp is-false">FALSE</div>
     </div>
-    <p class="lede">If this were true, multigenerational households should skew poorer. They don't — multigenerational share is <span class="hl hl-p">higher above</span> the 70% AMI line than below it, and these households mostly live in ordinary single-family homes, not cramped units.</p>
+    <p class="lede">If this were true, multigenerational households should skew poorer. They don't — multigenerational share is <span class="hl hl-p">higher above</span> the 70% AMI line than below it, and 80.5% of multigenerational households live in single-family homes. The likely reason: these households average <span class="hl hl-t">1.94 workers</span> per household versus 1.19 for everyone else — more earners under one roof, not more strain on the same income.</p>
     <div class="bars">
       <div class="bar-row">
         <div class="bar-lbl"><span>Households above 70% AMI</span><span>8.1% multigenerational</span></div>
@@ -256,8 +267,16 @@
         <div class="bar-track"><div class="bar-fill" style="width:5.9%; background:var(--pink);"></div></div>
       </div>
       <div class="bar-row">
-        <div class="bar-lbl"><span>Multigen households in single-family detached homes (above AMI)</span><span>87.6%</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:87.6%; background:var(--teal);"></div></div>
+        <div class="bar-lbl"><span>Multigenerational households living in single-family homes</span><span>80.5%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:80.5%; background:var(--teal);"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-lbl"><span>Avg. workers per household — multigenerational</span><span>1.94</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:64.7%; background:var(--teal);"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-lbl"><span>Avg. workers per household — everyone else</span><span>1.19</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:39.7%; background:var(--pink);"></div></div>
       </div>
     </div>
   </div>
@@ -291,6 +310,27 @@
       <div class="stat"><div class="big">−0.51</div><div class="lbl">correlation, doubled-up rate vs. residential vacancy (6 PUMAs)</div></div>
       <div class="stat"><div class="big">3,941 <span style="font-size:1rem;opacity:.6">→</span> 1,852</div><div class="lbl">units permitted per year, City of El Paso, 2015 → 2023</div></div>
       <div class="stat"><div class="big">−53%</div><div class="lbl">decline in annual home production over that span</div></div>
+    </div>
+
+    <div class="submark">
+      <div class="eyebrow">And it's not just El Paso</div>
+      <p class="lede" style="margin-top:10px;">The same pattern shows up across 13 metros. Doubling-up rates track a city's median income (<span class="hl hl-t">r = −0.51</span>) and rent burden (r = 0.41) far more than any regional culture story would predict — El Paso sits right in the middle of the pack, not as an outlier.</p>
+      <div class="bars compact">
+        <div class="bar-row"><div class="bar-lbl"><span>Laredo, TX</span><span>39.6% · $50.0k median income</span></div><div class="bar-track"><div class="bar-fill" style="width:88%; background:var(--pink);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Los Angeles, CA</span><span>36.0% · $71.0k</span></div><div class="bar-track"><div class="bar-fill" style="width:80%; background:var(--pink);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>McAllen, TX</span><span>35.0% · $37.9k</span></div><div class="bar-track"><div class="bar-fill" style="width:78%; background:var(--pink);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Fresno, CA</span><span>33.4% · $59.3k</span></div><div class="bar-track"><div class="bar-fill" style="width:74%; background:var(--pink);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Miami, FL</span><span>32.7% · $51.0k</span></div><div class="bar-track"><div class="bar-fill" style="width:73%; background:var(--pink);"></div></div></div>
+        <div class="bar-row is-el-paso"><div class="bar-lbl"><span>El Paso, TX ★</span><span>32.6% · $47.5k</span></div><div class="bar-track"><div class="bar-fill" style="width:72%; background:var(--yellow);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Honolulu, HI</span><span>30.6% · $81.0k</span></div><div class="bar-track"><div class="bar-fill" style="width:68%; background:var(--teal);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Houston, TX</span><span>28.0% · $58.5k</span></div><div class="bar-track"><div class="bar-fill" style="width:62%; background:var(--teal);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>San Antonio, TX</span><span>27.0% · $56.6k</span></div><div class="bar-track"><div class="bar-fill" style="width:60%; background:var(--teal);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Fort Worth, TX</span><span>25.3% · $67.0k</span></div><div class="bar-track"><div class="bar-fill" style="width:56%; background:var(--teal);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>San Francisco, CA</span><span>22.8% · $100.4k</span></div><div class="bar-track"><div class="bar-fill" style="width:51%; background:var(--teal);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Austin, TX</span><span>21.5% · $80.0k</span></div><div class="bar-track"><div class="bar-fill" style="width:48%; background:var(--teal);"></div></div></div>
+        <div class="bar-row"><div class="bar-lbl"><span>Albuquerque, NM</span><span>21.1% · $54.3k</span></div><div class="bar-track"><div class="bar-fill" style="width:47%; background:var(--teal);"></div></div></div>
+      </div>
+      <p style="margin-top:16px; font-size:.85rem; color:#65686f;">Doubled-up household rate (bar) and median household income, 13 U.S. metros. Home price-to-income ratio, by contrast, showed almost no relationship to doubling-up (r = 0.06) — it's the cost of getting by day to day, not home values, that tracks with how many households double up.</p>
     </div>
   </div>
 </section>
